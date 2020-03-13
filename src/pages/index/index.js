@@ -55,7 +55,7 @@ export default class Funcionarios extends Component {
                     <article key={funcionario._id}>
                         <strong> {funcionario.nome} </strong> 
                         <p> {funcionario.rgf} </p>
-                        <p> <Link to={`/funcionarios/${funcionarios._id}`}> Acessar </Link> </p>
+                        <p> <Link to={`/funcionarios/${funcionario._id}`}> Acessar </Link> </p>
                         <br/>
                     </article>
                 ))}

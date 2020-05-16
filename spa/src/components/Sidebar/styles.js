@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import imagemLogo from './Logo1.png';
+
 
 export const Container = styled.aside`
   display: flex;
@@ -8,36 +10,43 @@ export const Container = styled.aside`
   flex-shrink: 0;
   align-items: center;
   width: 100%;
-  height: 50px;
-  background: #D8D8D8;
+  height: 100px;
+  background:#fff;
   flex-direction: row;
-  padding-top:5px;
-  opacity: 0.5;
-  z-index: 100;
   transition: all 0.2s ease 0s;
-
-  &:hover {
-    opacity: 0.8;
-    background:#4ca8ff;
-  }
 `;
 
 export const SidebarLink = styled(NavLink)`
-  width: 40%;
+  width: auto;
   height: 100%;
+  margin:1px;
+  padding-left: 30px;
+  padding-right: 30px;
   text-align: center;
   font-size: 120%;
+  line-height: 100px;
   text-decoration: none;
-  padding: 5px;
   color: #363636;
   transition: all 0.2s ease 0s;
   &:hover {
     text-decoration: none;
     font-size: 122%;
-    color: #000;
-    border-bottom: 1px solid black;
-    border-radius: 2px;
+    color: #fff;
+    background: #4ca8ff; 
     
   }
+`;
+
+export const Logo = styled.aside`
+  display: flex;
+  background-image:url(${imagemLogo});
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  margin-top:1%;
+  margin-left: 2%;
+  height: 120px;
+
 `;
 

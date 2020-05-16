@@ -14,7 +14,7 @@ export const Container = styled.aside`
   width: 100%;
   height: 580px;
   flex-direction: column;
-  z-index: 0;
+
   font-size: 400%;
   font-family: Arial Black;
 
@@ -30,7 +30,6 @@ export const Logo = styled.aside`
   align-items: center;
   width: 800px;
   height: 400px;
-  z-index: 0;
 
 `;
 

@@ -5,7 +5,6 @@ import { Container, Input, Logo} from './styles';
 function Fundo() {
   return (
     <Container>    
-     <Logo></Logo>
      
     </Container>
     

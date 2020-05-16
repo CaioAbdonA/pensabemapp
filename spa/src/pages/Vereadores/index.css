@@ -1,0 +1,55 @@
+.funcionario-list{
+    margin: 20px auto 0;
+   
+    padding: 0 20px;
+    max-width: 700px;
+}
+
+.funcionario-list article{
+    display: flex;
+    flex-direction: row;
+    background: #FFDFB7;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.funcionario-list article strong{
+    padding: 5px;
+    color: dimgray;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+
+.funcionario-list article a{
+    height: 42px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: none;
+    margin-top: 10px;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.funcionario-list article a:hover{
+    background: #FFF;
+    color: #000;
+}
+
+button{
+    align-items: center;
+    margin:auto;
+    padding: 10px;
+    background: #fff;
+    height: 40px;
+    width: auto;
+    color: #00f;
+    border-radius: 5px;
+
+
+}

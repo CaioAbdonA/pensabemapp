@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Input, Logo} from './styles';
+import { Container} from './styles';
 
 function Fundo() {
   return (

@@ -119,7 +119,7 @@ export default class Funcionarios extends Component {
                    <td>{funcionario.cargo}</td>
                    <td>R$ {funcionario.rendimentos}</td>
                    <td>{funcionario.rgf}</td>
-                   <td><Link to={`/funcionarios/${funcionario._id}`}>Mais Informações </Link></td>
+                   <td><Link to={`/funcionarios/${funcionario.nome}`}>Mais Informações </Link></td>
                  </tr>
                </tbody>
              

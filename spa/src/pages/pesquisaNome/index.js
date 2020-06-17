@@ -6,7 +6,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'reactstrap';
 
-export default class Funcionarios extends Component {
+export default class pesquisaNome extends Component {
   //nao armazeno a variavel de forma local
 
     //uso uma variavel estado para isso
@@ -14,21 +14,8 @@ export default class Funcionarios extends Component {
     //cria um objeto e facilita a forma de manipular ele e atualizar
 
     state = {
-
-      search: "",
-
-      funcionarios: [],
-
-      funcionariosInfo: {},
-
-      page: 1,
-
+      funcionarios: []
   };
-
-  onChange = (evento) => {
-    this.setState({search: evento.target.value});
-  }
-
 
 
   //mostrar info automaticamente qdo iniciar a app, usa esse metodo
@@ -39,76 +26,32 @@ export default class Funcionarios extends Component {
 
   }
 
-  
-
-  loadFuncionarios = async (page = 1) => {
+  loadFuncionarios = async() =>{
 
       //const response = await api.get('/funcionarios');
 
 
 
-      const response = await api.get(`/funcionarios?page=${page}`);
+      const {nome} = this.props.match.params;
+    const response = await api.get(`/funcionariosN/${nome}`);
 
-
-
-      const { docs, ...funcionariosInfo } = response.data;
-
-
-
-      //console.log(response.data.docs);
-
-      //this.setState ({ funcionarios: response.data.docs})
-
-
-
-      this.setState ({ funcionarios: docs, funcionariosInfo, page});
+      this.setState ({ funcionarios: response.data});
 
   };
 
 
 
-  prevPage = () => {
-
-      const { page } = this.state;
-
-      if(page === 1) return;
-
-
-
-      const pageNumber = page - 1;
-
-      this.loadFuncionarios(pageNumber);
-
-  }
-
-
-
-  nextPage = () => {
-
-      const { page, funcionariosInfo } = this.state;
-
-      if(page === funcionariosInfo.pages) return;
-
-
-
-      const pageNumber = page + 1;
-
-      this.loadFuncionarios(pageNumber);
-
-  }
-
 
 
   render() {
 
-      const { funcionarios, funcionariosInfo, page } = this.state;
+      const { funcionarios} = this.state;
 
       return (
 
           <div className="funcionario-list">
-              Pesquisa: <input name='search' value={this.state.search} onChange={this.onChange} type="text" />
-              <Link to={`/funcionariosN/${this.state.search}`}>Pesquisar </Link>
-              <Table class="table">
+            
+            <Table class="table">
               <thead class="thead-dark">
                  <tr>
                    <th scope="col">NOME</th>
@@ -133,15 +76,7 @@ export default class Funcionarios extends Component {
               ))}
              
                 </Table>
-              
 
-              <div className="actions"> 
-
-                  <button disabled={page===1} onClick={this.prevPage}>Anterior</button>
-
-                  <button disabled={page===funcionariosInfo.pages} onClick={this.nextPage}>Próxima</button>
-
-              </div>
 
           </div>
 
@@ -150,3 +85,4 @@ export default class Funcionarios extends Component {
   }
 
 }
+

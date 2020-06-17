@@ -6,6 +6,7 @@ import Funcionarios from '../pages/Funcionarios';
 import Projetos from '../pages/Projetos';
 import Vereadores from '../pages/Vereadores';
 import oneFuncionario from '../pages/Details/details';
+import pesquisaTag from '../pages/pesquisaNome';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route path="/projetos" exact component={Projetos} />
       <Route path="/vereadores" exact component={Vereadores} />
       <Route path="/funcionarios/:nome" exact component={oneFuncionario} />
+      <Route path="/funcionariosN/:nome" exact component={pesquisaTag} />
     </Switch>
   );
 }

@@ -12,6 +12,7 @@ export const Container = styled.aside`
   width: 100%;
   height: 100px;
   background:#fff;
+  z-index: 1;
   flex-direction: row;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
   transition: all 0.2s ease 0s;
